@@ -22,7 +22,9 @@ class RootTableViewController: UITableViewController {
     
     var thumbQueue = NSOperationQueue()
     
-    let hackerNewsApiUrl = "http://qingbin.sinaapp.com/api/lists?ntype=%E5%9B%BE%E7%89%87&pageNo=1&pagePer=10&list.htm"
+    var pageNo = 1
+    
+//    var hackerNewsApiUrl:String =
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +74,7 @@ class RootTableViewController: UITableViewController {
     
     func loadDataSource() {
         self.refreshControl.beginRefreshing()
-        var loadURL = NSURL.URLWithString(hackerNewsApiUrl)
+        var loadURL = NSURL.URLWithString("http://qingbin.sinaapp.com/api/lists?ntype=%E5%9B%BE%E7%89%87&pageNo=\(pageNo)&pagePer=10&list.htm")
         var request = NSURLRequest(URL: loadURL)
         var loadDataSourceQueue = NSOperationQueue();
         
@@ -109,11 +111,11 @@ class RootTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         
-        let cell = tableView .dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+        var cell = tableView .dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
         
-        let newsItem = dataSource[indexPath.row] as XHNewsItem
+        var newsItem = dataSource[indexPath.row] as XHNewsItem
         cell.textLabel.text = newsItem.newsTitle
-        cell.imageView.image = UIImage(named :"cell_photo_default_small")
+        cell.imageView.image = UIImage(named :"iconpng")
         cell.imageView.contentMode = UIViewContentMode.ScaleAspectFit
         
         

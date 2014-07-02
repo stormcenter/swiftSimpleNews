@@ -14,6 +14,7 @@
 		E01C5FDE19613FF5004E0A6B /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01C5FDD19613FF5004E0A6B /* RootTableViewController.swift */; };
 		E01C5FE019614083004E0A6B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01C5FDF19614083004E0A6B /* WebViewController.swift */; };
 		E01C5FE2196140AF004E0A6B /* XHNewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01C5FE1196140AF004E0A6B /* XHNewsItem.swift */; };
+		E0A1AA9C19641CC20077BDE1 /* iconpng.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A1AA9B19641CC20077BDE1 /* iconpng.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		E01C5FDD19613FF5004E0A6B /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 		E01C5FDF19614083004E0A6B /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		E01C5FE1196140AF004E0A6B /* XHNewsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XHNewsItem.swift; sourceTree = "<group>"; };
+		E0A1AA9B19641CC20077BDE1 /* iconpng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconpng.png; path = ../../../../Downloads/iconpng.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		E01C5FBD19613F37004E0A6B /* swiftSimpleNews */ = {
 			isa = PBXGroup;
 			children = (
+				E0A1AA9B19641CC20077BDE1 /* iconpng.png */,
 				E01C5FC019613F37004E0A6B /* AppDelegate.swift */,
 				E01C5FDD19613FF5004E0A6B /* RootTableViewController.swift */,
 				E01C5FE1196140AF004E0A6B /* XHNewsItem.swift */,
@@ -195,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0A1AA9C19641CC20077BDE1 /* iconpng.png in Resources */,
 				E01C5FC619613F37004E0A6B /* Main.storyboard in Resources */,
 				E01C5FC819613F37004E0A6B /* Images.xcassets in Resources */,
 			);
@@ -334,6 +338,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = swiftSimpleNews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -345,6 +350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = swiftSimpleNews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -405,6 +411,7 @@
 				E01C5FD919613F37004E0A6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E01C5FDA19613F37004E0A6B /* Build configuration list for PBXNativeTarget "swiftSimpleNewsTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +420,7 @@
 				E01C5FDC19613F37004E0A6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
