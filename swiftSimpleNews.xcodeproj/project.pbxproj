@@ -14,7 +14,8 @@
 		E01C5FDE19613FF5004E0A6B /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01C5FDD19613FF5004E0A6B /* RootTableViewController.swift */; };
 		E01C5FE019614083004E0A6B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01C5FDF19614083004E0A6B /* WebViewController.swift */; };
 		E01C5FE2196140AF004E0A6B /* XHNewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01C5FE1196140AF004E0A6B /* XHNewsItem.swift */; };
-		E0A1AA9C19641CC20077BDE1 /* iconpng.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A1AA9B19641CC20077BDE1 /* iconpng.png */; };
+		E074C6E11964347C001B61EE /* iconpng.png in Resources */ = {isa = PBXBuildFile; fileRef = E074C6E01964347C001B61EE /* iconpng.png */; };
+		E074C6E31964353F001B61EE /* LoadMoreTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E074C6E21964353F001B61EE /* LoadMoreTableFooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,8 @@
 		E01C5FDD19613FF5004E0A6B /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 		E01C5FDF19614083004E0A6B /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		E01C5FE1196140AF004E0A6B /* XHNewsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XHNewsItem.swift; sourceTree = "<group>"; };
-		E0A1AA9B19641CC20077BDE1 /* iconpng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconpng.png; path = ../../../../Downloads/iconpng.png; sourceTree = "<group>"; };
+		E074C6E01964347C001B61EE /* iconpng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconpng.png; sourceTree = "<group>"; };
+		E074C6E21964353F001B61EE /* LoadMoreTableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadMoreTableFooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +83,10 @@
 		E01C5FBD19613F37004E0A6B /* swiftSimpleNews */ = {
 			isa = PBXGroup;
 			children = (
-				E0A1AA9B19641CC20077BDE1 /* iconpng.png */,
+				E074C6E01964347C001B61EE /* iconpng.png */,
 				E01C5FC019613F37004E0A6B /* AppDelegate.swift */,
 				E01C5FDD19613FF5004E0A6B /* RootTableViewController.swift */,
+				E074C6E21964353F001B61EE /* LoadMoreTableFooterView.swift */,
 				E01C5FE1196140AF004E0A6B /* XHNewsItem.swift */,
 				E01C5FC419613F37004E0A6B /* Main.storyboard */,
 				E01C5FC719613F37004E0A6B /* Images.xcassets */,
@@ -198,7 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0A1AA9C19641CC20077BDE1 /* iconpng.png in Resources */,
+				E074C6E11964347C001B61EE /* iconpng.png in Resources */,
 				E01C5FC619613F37004E0A6B /* Main.storyboard in Resources */,
 				E01C5FC819613F37004E0A6B /* Images.xcassets in Resources */,
 			);
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E01C5FDE19613FF5004E0A6B /* RootTableViewController.swift in Sources */,
+				E074C6E31964353F001B61EE /* LoadMoreTableFooterView.swift in Sources */,
 				E01C5FE019614083004E0A6B /* WebViewController.swift in Sources */,
 				E01C5FC119613F37004E0A6B /* AppDelegate.swift in Sources */,
 				E01C5FE2196140AF004E0A6B /* XHNewsItem.swift in Sources */,
