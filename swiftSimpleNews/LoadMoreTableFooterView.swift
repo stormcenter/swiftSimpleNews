@@ -28,7 +28,11 @@ class LoadMoreTableFooterView: UIView {
     var statusLabel: UILabel                        = UILabel()
     var activityView: UIActivityIndicatorView       = UIActivityIndicatorView()
     
-    init(frame: CGRect) {
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.autoresizingMask = UIViewAutoresizing.FlexibleWidth
@@ -80,7 +84,7 @@ class LoadMoreTableFooterView: UIView {
             loadScrollView.contentInset = UIEdgeInsetsMake(loadScrollView.contentInset.top, 0, 60, 0)
         } else if loadScrollView.dragging {
             var loading: Bool = false
-            if delegate.getLogicValue() {
+            if delegate != nil {
                 loading = delegate!.loadMoreTableFooterDataSourceIsLoading(self)
             }
             
@@ -109,12 +113,12 @@ class LoadMoreTableFooterView: UIView {
     
     func loadMoreScrollViewDidEndDragging(loadScrollView: UIScrollView) {
         var loading = false
-        if delegate {
+        if delegate != nil {
             loading = delegate!.loadMoreTableFooterDataSourceIsLoading(self)
         }
 
         if (loadScrollView.contentOffset.y > (loadScrollView.contentSize.height - (loadScrollView.frame.size.height - 60)) && !loading) {
-            if delegate.getLogicValue() {
+            if delegate != nil {
                 delegate!.loadMoreTableFooterDidTriggerRefresh(self)
             }
             

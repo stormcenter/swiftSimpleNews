@@ -61,7 +61,7 @@ class RootTableViewController: UITableViewController, LoadMoreTableFooterViewDel
             println("contentSize \(self.tableView.contentSize.height) framewidth = \(self.tableView.frame.size.width) frameheight= \(self.tableView.frame.size.height)")
             self.loadMoreFooterView = LoadMoreTableFooterView(frame: CGRectMake(0, self.tableView.contentSize.height, self.tableView.frame.width, self.tableView.frame.height))
             self.loadMoreFooterView!.delegate = self
-            self.tableView.addSubview(self.loadMoreFooterView)
+            self.tableView.addSubview(self.loadMoreFooterView!)
         }
 
         loadDataSource(true)

@@ -35,7 +35,7 @@ class WebViewController: UIViewController {
         webView=UIWebView()
         webView!.frame=self.view.frame
         webView!.backgroundColor=UIColor.grayColor()
-        self.view.addSubview(webView)
+        self.view.addSubview(webView!)
         
         loadDataSource()
         
