@@ -28,7 +28,7 @@ class LoadMoreTableFooterView: UIView {
     var statusLabel: UILabel                        = UILabel()
     var activityView: UIActivityIndicatorView       = UIActivityIndicatorView()
     
-    required init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     

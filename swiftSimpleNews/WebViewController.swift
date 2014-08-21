@@ -6,14 +6,6 @@
 //  Copyright (c) 2014年 Chi. All rights reserved.
 //
 
-//
-//  WebViewController.swift
-//  UITableViewControllerDemo
-//
-//  Created by 赵超 on 14-6-24.
-//  Copyright (c) 2014年 赵超. All rights reserved.
-//
-
 import UIKit
 
 class WebViewController: UIViewController {

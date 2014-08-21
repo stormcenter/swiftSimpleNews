@@ -6,14 +6,6 @@
 //  Copyright (c) 2014年 Chi. All rights reserved.
 //
 
-//
-//  RootTableViewController.swift
-//  UITableViewControllerDemo
-//
-//  Created by 赵超 on 14-6-24.
-//  Copyright (c) 2014年 赵超. All rights reserved.
-//
-
 import UIKit
 
 class RootTableViewController: UITableViewController, LoadMoreTableFooterViewDelegate {
@@ -133,7 +125,7 @@ class RootTableViewController: UITableViewController, LoadMoreTableFooterViewDel
         var loadDataSourceQueue = NSOperationQueue();
         
         NSURLConnection.sendAsynchronousRequest(request, queue: loadDataSourceQueue, completionHandler: { response, data, error in
-            if error {
+            if (error != nil) {
                 println(error)
                 dispatch_async(dispatch_get_main_queue(), {
                     self.refreshControl.endRefreshing()
@@ -186,7 +178,7 @@ class RootTableViewController: UITableViewController, LoadMoreTableFooterViewDel
 //        if !cell {
 //            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "cell")
 //        }
-        if(dataSource != nil && indexPath.row < dataSource.count) {
+        if(indexPath.row < dataSource.count) {
             var newsItem = dataSource[indexPath.row] as XHNewsItem
             cell.textLabel.text = newsItem.newsTitle
             cell.imageView.image = UIImage(named :"iconpng")
@@ -196,7 +188,7 @@ class RootTableViewController: UITableViewController, LoadMoreTableFooterViewDel
         
             let request = NSURLRequest(URL :NSURL.URLWithString(newsItem.newsThumb))
             NSURLConnection.sendAsynchronousRequest(request, queue: thumbQueue, completionHandler: { response, data, error in
-                if error {
+                if (error != nil) {
                     println(error)
                 
                 } else {
