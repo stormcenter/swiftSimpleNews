@@ -12,7 +12,7 @@ class RootTableViewController: UITableViewController, LoadMoreTableFooterViewDel
     
     var dataSource = NSMutableArray()
     
-    var thumbQueue = NSOperationQueue()
+    var thumbQueue = OperationQueue()
     
     var pageNo = 1
     
@@ -56,7 +56,7 @@ class RootTableViewController: UITableViewController, LoadMoreTableFooterViewDel
             self.tableView.addSubview(self.loadMoreFooterView!)
         }
 
-        loadDataSource(true)
+        loadDataSource(isRefresh: true)
     }
     
     // LoadMoreTableFooterViewDelegate
@@ -64,7 +64,7 @@ class RootTableViewController: UITableViewController, LoadMoreTableFooterViewDel
 //        loadMoreTableViewDataSource()
         self.pageNo++
         loadingMore = true
-        loadDataSource(false)
+        loadDataSource(isRefresh: false)
         println("loadMoreTableFooterDidTriggerRefresh")
     }
     
@@ -73,17 +73,17 @@ class RootTableViewController: UITableViewController, LoadMoreTableFooterViewDel
     }
 
     override// UIScrollViewDelegate
-    func scrollViewDidScroll(scrollView: UIScrollView!)
+    func scrollViewDidScroll(_ scrollView: UIScrollView!)
     {
         if (loadingMoreShowing) {
-            loadMoreFooterView!.loadMoreScrollViewDidScroll(scrollView)
+            loadMoreFooterView!.loadMoreScrollViewDidScroll(loadScrollView: loadScrollView,: scrollView)
         }
     }
     
-    override func scrollViewDidEndDragging(scrollView: UIScrollView!, willDecelerate decelerate: Bool) {
+    override func scrollViewDidEndDragging(_ scrollView: (UIScrollView!), willDecelerate decelerate: Bool) {
         
         if (loadingMoreShowing) {
-            loadMoreFooterView!.loadMoreScrollViewDidEndDragging(scrollView)
+            loadMoreFooterView!.loadMoreScrollViewDidEndDragging(loadScrollView: scrollView)
         }
     }
 
@@ -102,7 +102,7 @@ class RootTableViewController: UITableViewController, LoadMoreTableFooterViewDel
         return 1
     }
     
-    override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         
@@ -114,15 +114,15 @@ class RootTableViewController: UITableViewController, LoadMoreTableFooterViewDel
     func refreshSource() {
         pageNo = 1
         self.dataSource.removeAllObjects()
-        loadDataSource(true)
+        loadDataSource(isRefresh: isRefresh: true)
     }
     
     func loadDataSource(isRefresh : Bool) {
         println("loadDataSource \(isRefresh)")
-        self.refreshControl.beginRefreshing()
-        var loadURL = NSURL.URLWithString("http://qingbin.sinaapp.com/api/lists?ntype=%E5%9B%BE%E7%89%87&pageNo=\(pageNo)&pagePer=10&list.htm")
+        self.refreshControl?.beginRefreshing()
+        var loadURL = NSURL(string: "http://qingbin.sinaapp.com/api/lists?ntype=%E5%9B%BE%E7%89%87&pageNo=\(pageNo)&pagePer=10&list.htm")
         var request = NSURLRequest(URL: loadURL)
-        var loadDataSourceQueue = NSOperationQueue();
+        var loadDataSourceQueue = OperationQueue();
         
         NSURLConnection.sendAsynchronousRequest(request, queue: loadDataSourceQueue, completionHandler: { response, data, error in
             if (error != nil) {
@@ -215,7 +215,7 @@ class RootTableViewController: UITableViewController, LoadMoreTableFooterViewDel
     //选择一行
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
         var row=indexPath.row as Int
-        var data=self.dataSource[row] as XHNewsItem
+        var data=self.dataSource[row] as! XHNewsItem
         //入栈
         
         var webView=WebViewController()
